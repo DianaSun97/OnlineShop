@@ -1,0 +1,17 @@
+@page
+@model OnlineShop.Pages.Index
+
+@{
+    ViewBag.Title = "MainPage";
+}
+
+@foreach (var p in @Model.Cart.Products)
+{
+    <div class="well">
+        <h3>
+            <a class="link-product" href="/Description/@p.ProductID">@p.Name</a>
+            <span class="pull-right label label-primary">@p.Price.ToString("# €")</span>
+        </h3>
+        <span class="lead">@p.Description</span>
+    </div>
+}

@@ -1,0 +1,12 @@
+@page
+@model OnlineShop.Pages.Description
+
+<div>
+    @{
+        <div>
+            <a class="link-product" href="/Description/@Model.Product.ProductID">@Model.Product.Name</a>
+            <p>@Model.Product.Description</p>
+            <h4>@Model.Product.Price.ToString("# €")</h4>
+        </div>
+    }
+</div>

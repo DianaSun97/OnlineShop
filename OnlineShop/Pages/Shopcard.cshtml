@@ -1,0 +1,16 @@
+@page
+@model OnlineShop.Pages.Shopcart
+
+<div>
+    @{
+        foreach (var product in Model.Cart.Products)
+        {
+            <a class="link-product" href="/Description/@product.ProductID"><h3>@product.Name</h3></a>
+            <br />@product.Name <br />
+            <br />@product.Category <br />
+            <br />@product.Price <br />
+        }
+    }
+    
+    Total $@Model.Cart.CalculateProductTotal()
+</div>

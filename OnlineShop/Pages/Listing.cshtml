@@ -1,0 +1,16 @@
+@page
+@using OnlineShop.Models
+@model OnlineShop.Pages.Listing
+
+<div>
+    @{
+        foreach (var product in Model.Products)
+        {
+            <div>
+                <a class="link-product" href="/Description/@product.ProductID"><h3>@product.Name</h3></a>
+                <p>@product.Description</p>
+                <h4>@product.Price.ToString("# €")</h4>
+            </div>
+        }
+    }
+</div>
