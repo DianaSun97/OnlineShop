@@ -1,5 +1,6 @@
-using OnlineShop;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop;
+using OnlineShop.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
@@ -8,7 +9,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(c
 var app = builder.Build();
 
 app.UseStaticFiles();
-app.MapGet("/api/products", (ApplicationContext db) => db.Products.ToList());
+app.MapGet("/api/products", Controller.ListProducts);
 app.MapRazorPages();
 app.Run();
 
